@@ -12,15 +12,15 @@ def movies_page(link):
 
 # Lấy link movie chi tiết
 def get_links_movie(url, number):
-    # Tìm link đến trang start = 1001
-    links_101_1001 = []
+    # Tìm link đến trang start = 501
+    links_101_501 = []
     url_change = url
-    for i in range(51, 1001, 50):
+    for i in range(51, 501, 50):
         url_change = url_change.replace(str(i), str(i + 50))
-        links_101_1001.append(url_change)
+        links_101_501.append(url_change)
 
-    # URL trang 1, 2 --> start = 101 --> 1001
-    links = [url_genre[number], url] + links_101_1001
+    # URL trang 1, 2 --> start = 101 --> 501
+    links = [url_genre[number], url] + links_101_501
     for link in links:
         movies_page(link)
     return movies_links
